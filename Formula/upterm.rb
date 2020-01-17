@@ -1,8 +1,8 @@
 class Upterm < Formula
   desc "Secure terminal sharing"
   homepage "https://upterm.dev"
-  url "https://github.com/jingweno/upterm/archive/v0.0.5.tar.gz"
-  sha256 "76b45f8124fdf6f04e118543f39f6532482be0f5087a3c8d36bfd688902560ee"
+  url "https://github.com/jingweno/upterm/archive/v0.0.9.tar.gz"
+  sha256 "054048e42d94a4699285191d592733789ec8779fc1912a782c565ab7c47206c4"
   head "https://github.com/jingweno/upterm.git"
 
   depends_on "go" => :build
@@ -20,6 +20,6 @@ class Upterm < Formula
   end
 
   test do
-    assert_match(/upterm version 0.0.5/, shell_output("#{bin}/upterm version"))
+    assert_match(/upterm version 0.0.9/, shell_output("#{bin}/upterm version"))
   end
 end
