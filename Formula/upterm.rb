@@ -1,8 +1,8 @@
 class Upterm < Formula
   desc "Secure terminal sharing"
   homepage "https://upterm.dev"
-  url "https://github.com/jingweno/upterm/archive/v0.3.0.tar.gz"
-  sha256 "b06683f7207089a608f9c3529453bb0263daebec48660fb46a5c6f65cc19a150"
+  url "https://github.com/jingweno/upterm/archive/v0.3.1.tar.gz"
+  sha256 "0a7ed4fdd304ead924cfac8345a348f24a9b929b013f7e1af291db2984c204e9"
   head "https://github.com/jingweno/upterm.git"
 
   depends_on "go" => :build
