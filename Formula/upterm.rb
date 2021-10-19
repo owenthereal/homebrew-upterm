@@ -7,7 +7,6 @@ class Upterm < Formula
   homepage "https://upterm.dev"
   version "0.6.5"
   license "Apache 2.0"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/owenthereal/upterm/releases/download/v0.6.5/upterm_darwin_amd64.tar.gz"
