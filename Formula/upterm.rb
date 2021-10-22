@@ -5,36 +5,64 @@
 class Upterm < Formula
   desc "Secure terminal sharing"
   homepage "https://upterm.dev"
-  version "0.6.5"
+  version "0.6.6"
   license "Apache 2.0"
-  bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/owenthereal/upterm/releases/download/v0.6.5/upterm_darwin_amd64.tar.gz"
-    sha256 "66d8ea6cbf4abb5cb57ff0d542ae207caea2bdd1c47c501649fb608c1e98f93b"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.6.6/upterm_darwin_arm64.tar.gz"
+      sha256 "06ec8b2e7d101a88fe8e3c003c9a77f96c00473cd93d26fd03f900b7fae29e4f"
+
+      def install
+        bin.install "upterm"
+        prefix.install_metafiles
+        bash_completion.install "etc/completion/upterm.bash_completion.sh"
+        zsh_completion.install "etc/completion/upterm.zsh_completion" => "_upterm"
+        man.install "etc/man/man1"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.6.6/upterm_darwin_amd64.tar.gz"
+      sha256 "9f96796d8a27975705ba5b3994b5698e645ce0a9044259389ecddaa300d381af"
+
+      def install
+        bin.install "upterm"
+        prefix.install_metafiles
+        bash_completion.install "etc/completion/upterm.bash_completion.sh"
+        zsh_completion.install "etc/completion/upterm.zsh_completion" => "_upterm"
+        man.install "etc/man/man1"
+      end
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/owenthereal/upterm/releases/download/v0.6.5/upterm_darwin_arm64.tar.gz"
-    sha256 "3cffc56af8da0d07006438841b357b297535fbbae107ae9eee091c5d067dd8db"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/owenthereal/upterm/releases/download/v0.6.5/upterm_linux_amd64.tar.gz"
-    sha256 "c2084fde532d157fc124ad3ec59195f6aa9dc2f54db65485cf87c9f1c9581a45"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/owenthereal/upterm/releases/download/v0.6.5/upterm_linux_arm64.tar.gz"
-    sha256 "6f70032e705a46e546871265cd05a1c32e1f91440edd6166577dccd475557efb"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.6.6/upterm_linux_amd64.tar.gz"
+      sha256 "8194f6701e8edc91d52465819599e71b48f1eb6ae800c3a14016564bbb130cfe"
+
+      def install
+        bin.install "upterm"
+        prefix.install_metafiles
+        bash_completion.install "etc/completion/upterm.bash_completion.sh"
+        zsh_completion.install "etc/completion/upterm.zsh_completion" => "_upterm"
+        man.install "etc/man/man1"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.6.6/upterm_linux_arm64.tar.gz"
+      sha256 "55825ee21fdd10fdc46de95001e5bf81973f722e094d52c14c54cde8ba4a4f6d"
+
+      def install
+        bin.install "upterm"
+        prefix.install_metafiles
+        bash_completion.install "etc/completion/upterm.bash_completion.sh"
+        zsh_completion.install "etc/completion/upterm.zsh_completion" => "_upterm"
+        man.install "etc/man/man1"
+      end
+    end
   end
 
   head "https://github.com/owenthereal/upterm.git"
-
-  def install
-    bin.install "upterm"
-    prefix.install_metafiles
-    bash_completion.install "etc/completion/upterm.bash_completion.sh"
-    zsh_completion.install "etc/completion/upterm.zsh_completion" => "_upterm"
-    man.install "etc/man/man1"
-  end
 
   test do
     assert_match(/Upterm version/, shell_output("#{bin}/upterm version"))
