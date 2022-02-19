@@ -5,13 +5,13 @@
 class Upterm < Formula
   desc "Secure terminal sharing"
   homepage "https://upterm.dev"
-  version "0.6.8"
+  version "0.7.1"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.6.8/upterm_darwin_arm64.tar.gz"
-      sha256 "2cbe7c96c23ff220d142a729203f032b0901065c01d73dbf45cc801f882c202b"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.7.1/upterm_darwin_arm64.tar.gz"
+      sha256 "376cc69185829d67940a0fce580d0613234ae1c07f7d2055f7363cddbfa02e58"
 
       def install
         bin.install "upterm"
@@ -22,8 +22,8 @@ class Upterm < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.6.8/upterm_darwin_amd64.tar.gz"
-      sha256 "24490a2652e227998efa01330c7874e7df925f1216ac4aa35368078b89d5027c"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.7.1/upterm_darwin_amd64.tar.gz"
+      sha256 "3571442f22e5c1a114bbc40394d6abde9f752fc9c2f549cf0a064ee3169a13a2"
 
       def install
         bin.install "upterm"
@@ -37,8 +37,8 @@ class Upterm < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.6.8/upterm_linux_arm64.tar.gz"
-      sha256 "45d04b4cb8070e535705498c9bc5ce82f2454206b40d118bf5c6c247fa284f97"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.7.1/upterm_linux_arm64.tar.gz"
+      sha256 "9c12f738de2fe131e4fded18d18e586357b24c4bc3cd952120b3e0eee1c6a9b9"
 
       def install
         bin.install "upterm"
@@ -49,8 +49,8 @@ class Upterm < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.6.8/upterm_linux_amd64.tar.gz"
-      sha256 "2e1bd2e578765a6a44ce1d3bef0930e005d18553167dca131fa44ef06e33da69"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.7.1/upterm_linux_amd64.tar.gz"
+      sha256 "6253c37677db28d97847d818141cb34b4bc3c3126fecc00d635f4a12772247f0"
 
       def install
         bin.install "upterm"
