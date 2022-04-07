@@ -5,13 +5,13 @@
 class Upterm < Formula
   desc "Secure terminal sharing"
   homepage "https://upterm.dev"
-  version "0.8.0"
+  version "0.8.1"
   license "Apache 2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.8.0/upterm_darwin_arm64.tar.gz"
-      sha256 "ef02dd75cab05a9a343087d8c01c59545332e2a49f6793d2b1b42de52f7c1384"
+    if Hardware::CPU.intel?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.8.1/upterm_darwin_amd64.tar.gz"
+      sha256 "2dda72ff6c8cacab8f28161b80c313ec7dfdeac28eebd301b7c410e1d80ba8ae"
 
       def install
         bin.install "upterm"
@@ -21,9 +21,9 @@ class Upterm < Formula
         man.install "etc/man/man1"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.8.0/upterm_darwin_amd64.tar.gz"
-      sha256 "6e6ed516074417b092c61e7d03f7c24203e715ff50f6def6ccb5d31387905334"
+    if Hardware::CPU.arm?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.8.1/upterm_darwin_arm64.tar.gz"
+      sha256 "4527b113767a480579c9c2649c59d62c41828ff3fcfc5ee28f06b383b1fad4e6"
 
       def install
         bin.install "upterm"
@@ -36,9 +36,9 @@ class Upterm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.8.0/upterm_linux_arm64.tar.gz"
-      sha256 "81a005af405b3f43a4279123de86d444541bb6d30ad8a9965cf81439472a86d7"
+    if Hardware::CPU.intel?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.8.1/upterm_linux_amd64.tar.gz"
+      sha256 "159de310c2c7ed30e2de3688b1492f68884a5b606cd8aa49b54db5bfeb492c39"
 
       def install
         bin.install "upterm"
@@ -48,9 +48,9 @@ class Upterm < Formula
         man.install "etc/man/man1"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/owenthereal/upterm/releases/download/v0.8.0/upterm_linux_amd64.tar.gz"
-      sha256 "aac38f2c4853a33aeffe25bb17d070d41765eab9e3a0f8e45631515258233003"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/owenthereal/upterm/releases/download/v0.8.1/upterm_linux_arm64.tar.gz"
+      sha256 "cc33d37cad2f6d2576ebbc272051a2911fdb9415b016eaa51aecc7ec8e431bef"
 
       def install
         bin.install "upterm"
