@@ -2,7 +2,7 @@
 cask "upterm" do
   desc "Instant Terminal Sharing"
   homepage "https://upterm.dev"
-  version "0.15.1"
+  version "0.15.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -23,29 +23,35 @@ cask "upterm" do
 
   on_macos do
     on_intel do
-      url "https://github.com/owenthereal/upterm/releases/download/v0.15.1/upterm_darwin_amd64.tar.gz"
-      sha256 "9c841168c8a52f18d68db80599debfc5e56f1c9319edbf13bed53ae29a2e6e0b"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.15.2/upterm_darwin_amd64.tar.gz"
+      sha256 "ed4462c9d846b97317bd6c142f02cc740133c22573d452194e515bfb40e52ef6"
     end
     on_arm do
-      url "https://github.com/owenthereal/upterm/releases/download/v0.15.1/upterm_darwin_arm64.tar.gz"
-      sha256 "3682c3f11416304c853a6703037e81986e8ee93f96ff5c5888409edaa9f72bd0"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.15.2/upterm_darwin_arm64.tar.gz"
+      sha256 "ee6e3211db916996a627c62d612fc9fc9436bce98fad817de21f56f071df689b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/owenthereal/upterm/releases/download/v0.15.1/upterm_linux_amd64.tar.gz"
-      sha256 "2d2a881abb6cf1d21c1ac06ec10dd5c13efa989233deace888f13bdca768e58a"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.15.2/upterm_linux_amd64.tar.gz"
+      sha256 "7ac5130a3ec0fc1b643fd6f8e755e55bf4c57054795733aeb09e0ea4bce2f040"
     end
     on_arm do
-      url "https://github.com/owenthereal/upterm/releases/download/v0.15.1/upterm_linux_arm64.tar.gz"
-      sha256 "30736ae6da080ce478a53396fca1ee1ddb68e5f1faf269c0a2c6d9c0467dbb4e"
+      url "https://github.com/owenthereal/upterm/releases/download/v0.15.2/upterm_linux_arm64.tar.gz"
+      sha256 "d94ab64bfc6988f3376451ee2cbc507deb455b81e59d505c4ae4680d3f0ea0fc"
     end
   end
 
   conflicts_with formula: [
       "upterm",
     ]
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/upterm"]
+    end
+  end
 
   # No zap stanza required
 end
