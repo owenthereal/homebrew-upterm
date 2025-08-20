@@ -43,10 +43,6 @@ cask "upterm" do
     end
   end
 
-  conflicts_with formula: [
-      "upterm",
-    ]
-
   postflight do
     if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/upterm"]
