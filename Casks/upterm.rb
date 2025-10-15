@@ -3,7 +3,7 @@ cask "upterm" do
   name "upterm"
   desc "Instant Terminal Sharing"
   homepage "https://upterm.dev"
-  version "0.16.0"
+  version "0.16.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -25,22 +25,22 @@ cask "upterm" do
   on_macos do
     on_intel do
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_amd64.tar.gz"
-      sha256 "f1a0b37b8df4f3578d30ec6f7669b9e0f3a7c351c20b6b572c0fd0927b1e3447"
+      sha256 "ccad13051c2c4a092a3b3135a669da35aa1f211ee14fb7375974e6a64b9ced35"
     end
     on_arm do
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_arm64.tar.gz"
-      sha256 "9f65b2a1b6db1a3c01ff01055c57b35580be58a333171e3ffaf2df96ebc9a7ab"
+      sha256 "6ba6dd8dc334c7f20305fcb78271dc82d283920f10e0a6a10327c5a97b2d18be"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_amd64.tar.gz"
-      sha256 "6349abb7fc848399fa92106d9055b053fe6a94467353b8b029ecde742437ff75"
+      sha256 "08124118304821605bef19ea1249255f75ffb671c12f8a15d0b1f385fb35f34f"
     end
     on_arm do
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_arm64.tar.gz"
-      sha256 "ff1e166ba89538e03762b0b2ac262667329952c8a3e39613754a26d6a58f9651"
+      sha256 "199d7c6c41b178c87a18e9bec61a509bd9f08247fd018a408ef0ae79887d559f"
     end
   end
 
