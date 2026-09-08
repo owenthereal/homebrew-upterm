@@ -45,7 +45,7 @@ cask "upterm" do
   bash_completion "etc/completion/upterm.bash_completion.sh"
   zsh_completion "etc/completion/upterm.zsh_completion"
 
-  postflight do
+  postflight_steps do
     if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/upterm"]
     end
