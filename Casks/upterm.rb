@@ -6,25 +6,25 @@ cask "upterm" do
     end
   end
 
-  version "0.32.1"
+  version "0.33.0"
 
   on_macos do
     on_arm do
-      sha256 "a8dcb4b655687e71541dda889d4d34d4e85c8600a53fed2551d9cec71bb59e92"
+      sha256 "2863bdd4d8f86e20925121bd9aee269c87e1a84e935b68431dc90cce33e80572"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "ce7682060abe3cb66abfd24596a8520346d2c391250529630450104edef47a42"
+      sha256 "3742f851e05c4191d8fa3e2354d901d6d14e65a6c8c397f54af0f72a268eed4a"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "000b9cf308c8c65503d5d5ccbba52fe79302cbfeab7ee72ebffbe73da1414fc1"
+      sha256 "a3ade243cd33a3e5518a007ce5ac69d06b01bd988690d2d01d13be9bc61a1f64"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "0b3a1d50641066bc1f717c0ca42ccbb55c1297c31008f1867d61252e49b3e1de"
+      sha256 "17f35ebfd65a77ca2e5df841f0342950d4322cb8752ad7a7adfee8c3854a50f7"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_amd64.tar.gz"
     end
   end
