@@ -6,25 +6,25 @@ cask "upterm" do
     end
   end
 
-  version "0.38.0"
+  version "0.39.0"
 
   on_macos do
     on_arm do
-      sha256 "8258498167a8e7671680699f765c4cdf6814fe957256ac3fc7452cbd5ad1366f"
+      sha256 "9721c3b586a5de4f55d5e8d4cc8d9fcf17e1bcdc2e861cae9c31848fe204ede7"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "aaca2b92db585c53ed7d7bff723f40a19d2ae8b0c09fa52689bb077a0f64951b"
+      sha256 "eb31198215928ea003b42665c4ec248dba462f3ae921a7a6ff9d5a1faff30f71"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "fcd47353353bb39f96dd56418cc188643de6d227f4bb1e303efb0398c7dfa93d"
+      sha256 "61580ec7148e65a61c085b1c3091d29633b855126fbdc35f558f789f0923d05f"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "d5eff68db0ac596277f85ac7bf3443558f8463cd34db2b40b026899fda6b78c9"
+      sha256 "6149f1821dcd4abad864a2284ad8b32133a05a4032b0614abb66622860a68d17"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_amd64.tar.gz"
     end
   end
@@ -38,11 +38,20 @@ cask "upterm" do
   end
 
   binary "upterm"
+  manpage "etc/man/man1/upterm-attach.1"
+  manpage "etc/man/man1/upterm-config-edit.1"
+  manpage "etc/man/man1/upterm-config-path.1"
+  manpage "etc/man/man1/upterm-config-view.1"
+  manpage "etc/man/man1/upterm-config.1"
   manpage "etc/man/man1/upterm-host.1"
+  manpage "etc/man/man1/upterm-join.1"
   manpage "etc/man/man1/upterm-proxy.1"
   manpage "etc/man/man1/upterm-session-current.1"
   manpage "etc/man/man1/upterm-session-info.1"
   manpage "etc/man/man1/upterm-session-list.1"
+  manpage "etc/man/man1/upterm-session-set.1"
+  manpage "etc/man/man1/upterm-session-stop.1"
+  manpage "etc/man/man1/upterm-session-wait.1"
   manpage "etc/man/man1/upterm-session.1"
   manpage "etc/man/man1/upterm-upgrade.1"
   manpage "etc/man/man1/upterm-version.1"
