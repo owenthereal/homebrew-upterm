@@ -6,25 +6,25 @@ cask "upterm" do
     end
   end
 
-  version "0.40.0"
+  version "0.41.0"
 
   on_macos do
     on_arm do
-      sha256 "3329b79918cdfafaf2ba663d50b0a51d77b7dd2625c1c3b3d426f9aaee89a31d"
+      sha256 "9ef9cc32cb3a2bf757428b33b0454c5bdf2875a91b4f12cb5e3baa4b9c23fef0"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "029beb9482f21771e2ec7f08a9e5ef8814766620eba895b1f31b854bd75ec1f5"
+      sha256 "fc77ec6fe37955dc7208d2eb14c74c6001ad7e9ccc5c15d11f0ecbfb4319f53c"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "13909e6d85bd9e191c1b035ff41dc9eb469cae97e617fe069df096cc763f25bd"
+      sha256 "94a54c215405bc604072711f7a719ca387d603c9014fe60e98e47fe4f706a73b"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "065c172d7a0599a376ce0763a135792eee7e3c191ae78cfb335a07e900525231"
+      sha256 "dd40c62e9d585a0cada5b82458c62e171f1ed65a228d2fb4d3a508d5c8e34c5c"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_amd64.tar.gz"
     end
   end
@@ -50,6 +50,7 @@ cask "upterm" do
   manpage "etc/man/man1/upterm-session-info.1"
   manpage "etc/man/man1/upterm-session-list.1"
   manpage "etc/man/man1/upterm-session-set.1"
+  manpage "etc/man/man1/upterm-session-ssh-config.1"
   manpage "etc/man/man1/upterm-session-stop.1"
   manpage "etc/man/man1/upterm-session-wait.1"
   manpage "etc/man/man1/upterm-session.1"
