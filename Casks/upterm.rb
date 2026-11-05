@@ -6,25 +6,25 @@ cask "upterm" do
     end
   end
 
-  version "0.41.0"
+  version "0.41.1"
 
   on_macos do
     on_arm do
-      sha256 "9ef9cc32cb3a2bf757428b33b0454c5bdf2875a91b4f12cb5e3baa4b9c23fef0"
+      sha256 "47076b7012ec914d403e6c8d91de80732ac8d6dba5e8d62439f1bfcce5f15c86"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "fc77ec6fe37955dc7208d2eb14c74c6001ad7e9ccc5c15d11f0ecbfb4319f53c"
+      sha256 "fc4b80d3f57b42b4addf5c4b182ea16334d6e1196e988b9ea0ff69a123709b17"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "94a54c215405bc604072711f7a719ca387d603c9014fe60e98e47fe4f706a73b"
+      sha256 "25353fd52538acb9b2a5c95f2d9d3caa6df14f50413c2a56f33cded83b9bc1e9"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "dd40c62e9d585a0cada5b82458c62e171f1ed65a228d2fb4d3a508d5c8e34c5c"
+      sha256 "3007d4ce09e9f70a390e1b52e5a0b591fc9fa473196ca76d8f72b5f1cd723b31"
       url "https://github.com/owenthereal/upterm/releases/download/v#{version}/upterm_linux_amd64.tar.gz"
     end
   end
@@ -60,5 +60,5 @@ cask "upterm" do
   bash_completion "etc/completion/upterm.bash_completion.sh"
   zsh_completion "etc/completion/upterm.zsh_completion"
 
-  # No zap stanza required
+  zap :not_required
 end
